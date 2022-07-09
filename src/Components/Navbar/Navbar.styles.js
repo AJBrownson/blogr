@@ -12,8 +12,19 @@ height: 80vh;
 export const Nav = styled.nav`
 display: flex;
 flex-direction: row;
+padding: 40px;
 justify-content: space-between;
 align-items: center;
+height: 80px;
+
+@media screen and (max-width: 768px) {
+    position: absolute;
+    width: 100%;
+    height: 75px;
+    left: 0px;
+    top: 0px;
+    display: flex;
+}
 `;
 
 
@@ -50,6 +61,8 @@ display: none;
 }
 `;
 
+
+
 export const NavMenu = styled.ul`
 display: flex;
 align-items: center;
@@ -69,6 +82,29 @@ text-align: center;
     background: #fff;
 }
 `;
+
+
+
+
+
+export const NavItem = styled.div`
+height: 80px;
+color: white;
+`;
+
+
+export const NavLinks = styled.li`
+display: flex;
+align-items: center;
+text-decoration: none;
+list-style: none;
+padding: 0.5rem 1rem;
+height: 80%;
+cursor: pointer;
+`
+
+
+
 
 export const NavAccordion = styled.div`
 display: flex;
@@ -134,7 +170,7 @@ h1, p {
 }
 
 h1 {
-    margin-top: 10%;
+    margin-top: 5%;
     font-family: 'Overpass', sans-serif;
     font-weight: 700;
     font-size: 50px;
@@ -144,15 +180,59 @@ p {
     font-size: 16px;
 }
 
-& > div > Button {
-    // position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    // padding-top: 10%;
-}
+// & > div > Button {
+//     position: absolute;
+//     display: inline-block;
+//     top: 60%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+    
+// }
+`;
 
-`
+export const ButtonDiv = styled.div`
+display: flex;
+flex-direction: row;
+`;
+
+
+
+export const Buttons = styled.button`
+position: absolute;
+top: 60%;
+left: 50%;
+transform: translate(-50%, -50%);
+display: block;
+padding: 0.5rem 0;
+margin: 0.5rem 1rem;
+width: 7rem;
+background: transparent;
+color: white;
+border: transparent;
+cursor: pointer;
+
+${props => props.primary && css`
+    background: white;
+    color: hsl(355, 100%, 74%);
+    border-radius: 15px;
+
+    :hover {
+        background: hsl(355, 100%, 74%);
+        color: hsl(0, 0%, 100%);
+    }
+  `}
+
+${props => props.secondary && css`
+    border: 1px solid white;
+    border-radius: 15px;
+
+    :hover {
+        background: white;
+        color: hsl(355, 100%, 74%);
+    }
+  `}
+`;
+
 
 
 export const Title = styled.div`

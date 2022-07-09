@@ -13,7 +13,19 @@ justify-content: space-between;
 
 h1 {
     text-align: center;
+    margin-left: 50%;
 }
+
+
+h2 {
+    margin-top: 10%;
+    
+}
+
+h2, p {
+    padding-left: 50px;
+}
+
 
 @media screen and (max-width: 768px) {
     display: none;
